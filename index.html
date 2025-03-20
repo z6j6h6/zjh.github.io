@@ -148,14 +148,10 @@
             <div class="main-body" id="table-md"></div>
 
         </div>
-        <table border="1">
+        <table border="1" style="width: 80%; border-collapse: separate; border-spacing: 5px; padding: 5px; margin: auto;">
+            <caption style="text-align: center;">2024–2025年度第二学期 机械科学与工程学院</caption>
+            <caption style="text-align: center;">佘文勇 (2004010004) 副教授 课堂课表</caption>
             <thead>
-              <tr>
-                <th colspan="13">2024–2025年度第二学期 机械科学与工程学院</th>
-              </tr>
-              <tr>
-                <th colspan="13">佘文勇 (2004010004) 副教授 课堂课表</th>
-              </tr>
               <tr>
                 <th>课程名称</th>
                 <th>课程代码</th>
@@ -240,6 +236,108 @@
             </header>
             <div class="main-body" id="form-md"></div>
         </div>
+        <!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>申请表</title>
+  <style>
+    form {
+      background-color: #e0f7e3;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 450px;
+      margin: 60px auto;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    input[type="reset"] {
+      background-color: #f44336;
+      color: white;
+      margin-left: 10px;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <h2>申请表</h2>
+    <label>姓名:</label>
+    <input type="text" placeholder="请输入姓名">
+    <label>感兴趣的职位：</label>
+    <input type="radio" name="position" value="Web设计人员"> Web设计人员
+    <input type="radio" name="position" value="Web管理人员"> Web管理人员
+    <input type="radio" name="position" value="Web开发人员"> Web开发人员
+    <label>其他要求：</label>
+    <textarea placeholder="包括薪水待遇、工作地点等。"></textarea>
+    <input type="checkbox" id="confirmMsg" checked<label for="confirmMsg">发送确认消息</label>
+    <label>经验</label>
+    <select name="experience">
+      <option value="无经验">无经验</option>
+      <option value="1-2年经验">1-2年经验</option>
+      <option value="3-5年经验">3-5年经验</option>
+    </select>
+    <input type="submit" value="确定">
+    <input type="reset" value="重置">
+  </form>
+</body>
+
+</html>
+
+
     </section>
     <!-- Form -->
 
@@ -252,6 +350,57 @@
             <div class="main-body" id="js-md"></div>
 
         </div>
+        <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 演示</title>
+  <style>
+    button {
+      display: block;
+      margin: 20px auto;
+    }
+
+    #time-display {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    #returnButton {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="originalButton" onclick="showAlertAndChange()">弹出对话框并执行操作</button>
+  <div id="time-display"></div>
+  <button id="returnButton" onclick="goBackToOriginal()">回到原来位置</button>
+
+  <script>
+    function showAlertAndChange() {
+      document.getElementById('originalButton').style.display = 'none';
+      document.getElementById('returnButton').style.display = 'block';
+      // 弹出对话框
+      alert("这是一个弹出对话框演示");
+      // 改变屏幕背景色
+      document.body.style.backgroundColor = "lightblue";
+      // 显示当前时间
+      const now = new Date();
+      const currentTime = now.toLocaleString();
+      document.getElementById('time-display').innerHTML = "当前时间是：" + currentTime;
+    }
+
+    function goBackToOriginal() {
+      document.location.reload();
+    }
+  </script>
+</body>
+
+</html>
+
     </section>
     <!-- Js  -->
 
