@@ -11,7 +11,11 @@ I'm currently studying at HuaZhong University of Science and Technology.
 #### Address
 <code>Wuhan</code>
 
+#### Interest
+<code>badminton and hike in nature</code>
+
 #### Education  
 **HuaZhong University of Science and technology**, Master of Marine Engineering, 2024-2028  
+
 
 
