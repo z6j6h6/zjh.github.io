@@ -350,52 +350,7 @@
             <div class="main-body" id="js-md"></div>
 
         </div>
-        <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript 演示</title>
-  <style>
-    button {
-      display: block;
-      margin: 20px auto;
-    }
-
-    #time-display {
-      text-align: center;
-      margin-top: 50px;
-    }
-
-    #returnButton {
-      display: none;
-    }
-  </style>
-</head>
-
-<body>
-  <button id="originalButton" onclick="showAlertAndChange()">弹出对话框并执行操作</button>
-  <div id="time-display"></div>
-  <button id="returnButton" onclick="goBackToOriginal()">回到原来位置</button>
-
-  <script>
-    function showAlertAndChange() {
-      document.getElementById('originalButton').style.display = 'none';
-      document.getElementById('returnButton').style.display = 'block';
-      // 弹出对话框
-      alert("这是一个弹出对话框演示");
-      // 改变屏幕背景色
-      document.body.style.backgroundColor = "lightblue";
-      // 显示当前时间
-      const now = new Date();
-      const currentTime = now.toLocaleString();
-      document.getElementById('time-display').innerHTML = "当前时间是：" + currentTime;
-    }
-
-    function goBackToOriginal() {
-      document.location.reload();
-    }
+       
   </script>
 </body>
 
