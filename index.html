@@ -349,8 +349,7 @@
             <div class="main-body" id="js-md"></div>
 
         </div>
-        <!DOCTYPE html>
-        <html lang="en">
+    
         
         <!DOCTYPE html>
         <html lang="zh-CN">
@@ -387,66 +386,53 @@
           <button id="randomColorButton">随机改变背景颜色</button>
         
           <script>
-            // 获取相关 DOM 元素
             const originalButton = document.getElementById('originalButton');
             const returnButton = document.getElementById('returnButton');
             const timeDisplay = document.getElementById('time-display');
             const randomColorButton = document.getElementById('randomColorButton');
         
-            // 定义 showAlertAndChange 函数
             function showAlertAndChange() {
-              // 隐藏原始按钮
               originalButton.style.display = 'none';
-              // 显示返回按钮
               returnButton.style.display = 'block';
-              // 显示随机颜色按钮
               randomColorButton.style.display = 'block';
-              // 弹出对话框
               alert("这是一个弹出对话框演示");
-              // 改变屏幕背景色
               document.body.style.backgroundColor = "lightblue";
-              // 显示当前时间
               const now = new Date();
               const currentTime = now.toLocaleString();
               timeDisplay.innerHTML = "当前时间是：" + currentTime;
             }
         
-            // 定义 goBackToOriginal 函数
             function goBackToOriginal() {
               document.location.reload();
             }
         
-            // 生成随机颜色的函数
+            function getRandomHexChar() {
+              const hexChars = '0123456789ABCDEF';
+              return hexChars[Math.floor(Math.random() * 16)];
+            }
+        
             function getRandomColor() {
-              const letters = '0123456789ABCDEF';
               let color = '#';
               for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
+                color += getRandomHexChar();
               }
               return color;
             }
         
-            // 改变背景颜色的函数
             function changeBackgroundColor() {
               const randomColor = getRandomColor();
               document.body.style.backgroundColor = randomColor;
             }
         
-            // 为原始按钮绑定点击事件
             originalButton.addEventListener('click', showAlertAndChange);
-            // 为返回按钮绑定点击事件
             returnButton.addEventListener('click', goBackToOriginal);
-            // 为随机颜色按钮绑定点击事件
             randomColorButton.addEventListener('click', changeBackgroundColor);
           </script>
         </body>
-        
         </html>
-        
-          </script>
-        </body>
-        
-        </html>
+
+
+
     </section>
     <!-- Js  -->
 
