@@ -150,7 +150,7 @@
         </div>
         <table border="1" style="width: 80%; border-collapse: separate; border-spacing: 5px; padding: 5px; margin: auto;">
             <caption style="text-align: center; caption-side: top;">2024–2025年度第二学期 机械科学与工程学院</caption>
-            <caption style="text-align: center; caption-side: top;">佘文勇 (2004010004) 副教授 课堂课表</caption>
+            <caption style="text-align: center; caption-side: top;">余文勇 (2004010004) 副教授 课堂课表</caption>
             <thead>
               <tr>
                 <th>课程名称</th>
@@ -180,7 +180,7 @@
                 <td>5 - 6</td>
                 <td>1 - 6</td>
                 <td>东九楼D406</td>
-                <td>佘文勇 (副教授)</td>
+                <td>余文勇 (副教授)</td>
                 <td>12</td>
                 <td>42</td>
               </tr>
@@ -190,7 +190,7 @@
                 <td>3 - 4</td>
                 <td>1 - 6</td>
                 <td>东九楼D406</td>
-                <td>佘文勇 (副教授)</td>
+                <td>余文勇 (副教授)</td>
                 <td>12</td>
                 <td>42</td>
               </tr>
@@ -200,7 +200,7 @@
                 <td>9 - 12</td>
                 <td>3 - 3</td>
                 <td>计算机开放实验室 (工程实践创新中心A座)</td>
-                <td>佘文勇 (副教授)</td>
+                <td>余文勇 (副教授)</td>
                 <td>4</td>
                 <td>42</td>
               </tr>
@@ -210,7 +210,7 @@
                 <td>9 - 12</td>
                 <td>5 - 5</td>
                 <td>计算机开放实验室 (工程实践创新中心A座)</td>
-                <td>佘文勇 (副教授)</td>
+                <td>余文勇 (副教授)</td>
                 <td>4</td>
                 <td>42</td>
               </tr>
@@ -352,6 +352,9 @@
         <!DOCTYPE html>
         <html lang="en">
         
+        <!DOCTYPE html>
+        <html lang="zh-CN">
+        
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -370,18 +373,34 @@
             #returnButton {
               display: none;
             }
+        
+            #randomColorButton {
+              display: none;
+            }
           </style>
         </head>
         
         <body>
-          <button id="originalButton" onclick="showAlertAndChange()">弹出对话框并执行操作</button>
+          <button id="originalButton">弹出对话框并执行操作</button>
           <div id="time-display"></div>
-          <button id="returnButton" onclick="goBackToOriginal()">回到原来位置</button>
+          <button id="returnButton">回到原来位置</button>
+          <button id="randomColorButton">随机改变背景颜色</button>
         
           <script>
+            // 获取相关 DOM 元素
+            const originalButton = document.getElementById('originalButton');
+            const returnButton = document.getElementById('returnButton');
+            const timeDisplay = document.getElementById('time-display');
+            const randomColorButton = document.getElementById('randomColorButton');
+        
+            // 定义 showAlertAndChange 函数
             function showAlertAndChange() {
-              document.getElementById('originalButton').style.display = 'none';
-              document.getElementById('returnButton').style.display = 'block';
+              // 隐藏原始按钮
+              originalButton.style.display = 'none';
+              // 显示返回按钮
+              returnButton.style.display = 'block';
+              // 显示随机颜色按钮
+              randomColorButton.style.display = 'block';
               // 弹出对话框
               alert("这是一个弹出对话框演示");
               // 改变屏幕背景色
@@ -389,12 +408,41 @@
               // 显示当前时间
               const now = new Date();
               const currentTime = now.toLocaleString();
-              document.getElementById('time-display').innerHTML = "当前时间是：" + currentTime;
+              timeDisplay.innerHTML = "当前时间是：" + currentTime;
             }
         
+            // 定义 goBackToOriginal 函数
             function goBackToOriginal() {
               document.location.reload();
             }
+        
+            // 生成随机颜色的函数
+            function getRandomColor() {
+              const letters = '0123456789ABCDEF';
+              let color = '#';
+              for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+              }
+              return color;
+            }
+        
+            // 改变背景颜色的函数
+            function changeBackgroundColor() {
+              const randomColor = getRandomColor();
+              document.body.style.backgroundColor = randomColor;
+            }
+        
+            // 为原始按钮绑定点击事件
+            originalButton.addEventListener('click', showAlertAndChange);
+            // 为返回按钮绑定点击事件
+            returnButton.addEventListener('click', goBackToOriginal);
+            // 为随机颜色按钮绑定点击事件
+            randomColorButton.addEventListener('click', changeBackgroundColor);
+          </script>
+        </body>
+        
+        </html>
+        
           </script>
         </body>
         
