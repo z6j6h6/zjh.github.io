@@ -349,54 +349,77 @@
             <div class="main-body" id="js-md"></div>
 
         </div>
-    
         <!DOCTYPE html>
         <html lang="zh-CN">
         <head>
             <meta charset="UTF-8">
-            <title>背景色切换演示</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>居中跳转按钮</title>
             <style>
+                /* 基础样式重置 */
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+        
                 body {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     min-height: 100vh;
-                    margin: 0;
-                    transition: background-color 0.3s;
+                    background-color: #f0f2f5;
+                    font-family: Arial, sans-serif;
                 }
         
-                #colorBtn {
-                    padding: 16px 32px;
+                /* 按钮容器样式 */
+                .button-container {
+                    position: relative;
+                }
+        
+                /* 按钮基础样式 */
+                #jumpButton {
+                    padding: 16px 40px;
                     font-size: 1.2em;
                     background-color: #2196F3;
                     color: white;
                     border: none;
                     border-radius: 8px;
                     cursor: pointer;
-                    transition: transform 0.2s;
-                    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
                 }
         
-                #colorBtn:hover:not(:disabled) {
-                    transform: scale(1.05);
-                    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+                /* 按钮悬停动画 */
+                #jumpButton:hover:not(:disabled) {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+                }
+        
+                /* 按钮点击动效 */
+                #jumpButton:active {
+                    transform: scale(0.98);
                 }
             </style>
         </head>
         <body>
-            <button id="colorBtn">切换背景色</button>
+            <div class="button-container">
+                <button id="jumpButton" 
+                        onclick="window.location.href='https://hust.edu.cn'"
+                        target="_blank">点击查看JavaScript展示</button>
+            </div>
         
             <script>
-                const colors = ['#FF5722', '#4CAF50', '#9C27B0', '#FFC107']; // 预设颜色组
-                let currentIndex = 0;
+                // 可选：添加点击动画效果
+                const button = document.getElementById('jumpButton');
+                let isAnimating = false;
         
-                document.getElementById('colorBtn').addEventListener('click', () => {
-                    document.body.style.backgroundColor = colors[currentIndex];
-                    currentIndex = (currentIndex + 1) % colors.length;
+                button.addEventListener('mousedown', () => {
+                    if (!isAnimating) {
+                        isAnimating = true;
+                        button.style.transform = 'scale(0.95)';
+                    }
                 });
-            </script>
-        </body>
-        </html>
         
 
 
