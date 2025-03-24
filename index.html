@@ -350,7 +350,54 @@
 
         </div>
     
-     
+        <!DOCTYPE html>
+        <html lang="zh-CN">
+        <head>
+            <meta charset="UTF-8">
+            <title>背景色切换演示</title>
+            <style>
+                body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 100vh;
+                    margin: 0;
+                    transition: background-color 0.3s;
+                }
+        
+                #colorBtn {
+                    padding: 16px 32px;
+                    font-size: 1.2em;
+                    background-color: #2196F3;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: transform 0.2s;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+                }
+        
+                #colorBtn:hover:not(:disabled) {
+                    transform: scale(1.05);
+                    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+                }
+            </style>
+        </head>
+        <body>
+            <button id="colorBtn">切换背景色</button>
+        
+            <script>
+                const colors = ['#FF5722', '#4CAF50', '#9C27B0', '#FFC107']; // 预设颜色组
+                let currentIndex = 0;
+        
+                document.getElementById('colorBtn').addEventListener('click', () => {
+                    document.body.style.backgroundColor = colors[currentIndex];
+                    currentIndex = (currentIndex + 1) % colors.length;
+                });
+            </script>
+        </body>
+        </html>
+        
 
 
     </section>
